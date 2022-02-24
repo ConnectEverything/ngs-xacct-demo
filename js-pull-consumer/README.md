@@ -5,10 +5,10 @@
 ./js-bootstrap.sh
 
 # with access to test-a account privatekey
-./public-public-acct-export.sh -a
+./public-acct-export.sh -a
 
 # with access to test-b account privatekey
-./public-public-acct-import.sh -a
+./public-acct-import.sh -a
 
 # as test-a
 nats req --context=test-a retail.v1.fulfill.completed "hello from test-a"
