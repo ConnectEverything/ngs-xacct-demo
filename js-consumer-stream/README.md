@@ -1,4 +1,4 @@
-# public-export-js-push-consumer
+# Share a JetStream Consumer message feed as a stream
 
 ```bash
 # as test-a

@@ -1,4 +1,4 @@
-# public-export-js-pull-consumer
+# Share a JetStream Consumer message feed as a service
 
 ```bash
 # as test-a
@@ -46,10 +46,10 @@ nsc revocations delete-activation --account "todd-test-c" --service --subject "\
 
 Why the different message here?
 ```bash
-todd@mort:~/lab/ngs-xacct-demo/js-pull-consumer$ nsc revocations list-activations --account "todd-test-a"
+todd@mort:~/lab/ngs-xacct-demo/js-consumer-service$ nsc revocations list-activations --account "todd-test-a"
 Error: account "todd-test-a" doesn't have stream exports
-todd@mort:~/lab/ngs-xacct-demo/js-pull-consumer$ nsc revocations list-activations --account "todd-test-b"
+todd@mort:~/lab/ngs-xacct-demo/js-consumer-service$ nsc revocations list-activations --account "todd-test-b"
 Error: account "todd-test-b" doesn't have exports
-todd@mort:~/lab/ngs-xacct-demo/js-pull-consumer$ nsc revocations list-activations --account "todd-test-c"
+todd@mort:~/lab/ngs-xacct-demo/js-consumer-service$ nsc revocations list-activations --account "todd-test-c"
 Error: account "todd-test-c" doesn't have stream exports
 ```
