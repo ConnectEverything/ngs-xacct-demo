@@ -14,14 +14,14 @@ ACCTCPUBKEY="ABTJUJC5DHOPQHI2WLUDUBTYDDNJKP45J7SWUDPP673TK3X7U5FUGU33"
 
 addimports () {
 # ACCTB
-nsc add import --account $ACCTB --name "retail.v1.order.captured" --src-account $ACCTAPUBKEY --remote-subject "deliver.retail.v1.order.captured" --local-subject "retail.v1.order.captured"
+nsc add import --account $ACCTB --name "retail.v1.order.captured" --src-account $ACCTAPUBKEY --remote-subject "deliver.retail.v1.order.events" --local-subject "retail.v1.order.events"
 # nsc add import --account $ACCTB --name "ACCTA.API.STREAM.INFO.ORDEREVENTS" --remote-subject "\$JS.API.STREAM.INFO.ORDEREVENTS" --src-account $ACCTAPUBKEY --local-subject "ACCTA.API.STREAM.INFO.ORDEREVENTS" --service
 nsc add import --account $ACCTB --name "ACCTA.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --remote-subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --src-account $ACCTAPUBKEY --local-subject "ACCTA.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --service
 nsc add import --account $ACCTB --name "ACCTA.ACK.ORDEREVENTS.ORDEREVENTS-C1" --remote-subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --src-account $ACCTAPUBKEY --local-subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --service
 }
 
 deleteimports () {
-nsc delete import --account $ACCTB --src-account $ACCTAPUBKEY --subject "deliver.retail.v1.order.captured"
+nsc delete import --account $ACCTB --src-account $ACCTAPUBKEY --subject "deliver.retail.v1.order.events"
 # nsc delete import --account $ACCTB --src-account $ACCTAPUBKEY --subject "\$JS.API.STREAM.INFO.ORDEREVENTS"
 nsc delete import --account $ACCTB --src-account $ACCTAPUBKEY --subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1"
 nsc delete import --account $ACCTB --src-account $ACCTAPUBKEY --subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>"

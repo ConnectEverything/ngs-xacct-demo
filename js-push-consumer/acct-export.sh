@@ -17,14 +17,14 @@ addexports () {
 # nsc add export --account $ACCTA --subject "\$JS.API.STREAM.INFO.ORDEREVENTS" --service
 nsc add export --account $ACCTA --subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --service
 nsc add export --account $ACCTA --subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --service
-nsc add export --account $ACCTA --subject "deliver.retail.v1.order.captured"
+nsc add export --account $ACCTA --subject "deliver.retail.v1.order.events"
 }
 
 deleteexports () {
 # nsc delete export --account $ACCTA --subject "\$JS.API.STREAM.INFO.ORDEREVENTS"
 nsc delete export --account $ACCTA --subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1"
 nsc delete export --account $ACCTA --subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>"
-nsc delete export --account $ACCTA --subject "deliver.retail.v1.order.captured"
+nsc delete export --account $ACCTA --subject "deliver.retail.v1.order.events"
 }
 
 while getopts "a d" option

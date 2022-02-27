@@ -5,14 +5,14 @@
 ./js-bootstrap.sh
 
 # with access to test-a account privatekey
-./public-acct-export.sh -a
+./acct-export.sh -a
 
 # with access to test-b account privatekey
-./public-acct-import.sh -a
+./acct-import.sh -a
 
 # as test-a
 nats req --context=test-a retail.v1.order.captured "hello from test-a"
 
 # as test-b
-nats sub --context=test-b --ack --queue=after-processor retail.v1.order.captured
+nats sub --context=test-b --ack --queue=after-processor retail.v1.order.events
 ```
