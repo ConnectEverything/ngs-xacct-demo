@@ -14,9 +14,9 @@ ACCTCPUBKEY="ABTJUJC5DHOPQHI2WLUDUBTYDDNJKP45J7SWUDPP673TK3X7U5FUGU33"
 
 addexports () {
 # ACCTA
-nsc add export --account $ACCTA --subject "deliver.retail.v1.order.events"
-nsc add export --account $ACCTA --subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --service
-nsc add export --account $ACCTA --subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --service
+nsc add export --account $ACCTA --name "ORDEREVENTS-GRANT-DELIVER" --subject "deliver.retail.v1.order.events"
+nsc add export --account $ACCTA --name "ORDEREVENTS-GRANT-ACK" --subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --service
+nsc add export --account $ACCTA --name "ORDEREVENTS-GRANT-INFO" --subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --service
 }
 
 deleteexports () {
