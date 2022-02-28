@@ -18,7 +18,7 @@ nsc add import --account $ACCTB --name "FULFILLEVENTS-GRANT-NEXT" --src-account 
 nsc add import --account $ACCTB --name "FULFILLEVENTS-GRANT-ACK" --remote-subject "\$JS.ACK.FULFILLEVENTS.FULFILLEVENTS-C1.>" --src-account $ACCTAPUBKEY --local-subject "\$JS.ACK.FULFILLEVENTS.FULFILLEVENTS-C1.>" --service
 nsc add import --account $ACCTB --name "FULFILLEVENTS-GRANT-INFO" --remote-subject "\$JS.API.CONSUMER.INFO.FULFILLEVENTS.FULFILLEVENTS-C1" --src-account $ACCTAPUBKEY --local-subject "ACCTA.API.CONSUMER.INFO.FULFILLEVENTS.FULFILLEVENTS-C1" --service
 
-# ACCTB importing a private export from ACCTA
+# ACCTB importing a private export from ACCTC
 nsc add import --token "RESTOCKEVENTS-GRANT-NEXT-ACCTB.tok" --account $ACCTB --name "RESTOCKEVENTS-GRANT-NEXT" --local-subject "ACCTC.API.CONSUMER.MSG.NEXT.RESTOCKEVENTS.RESTOCKEVENTS-C1"
 nsc add import --token "RESTOCKEVENTS-GRANT-ACK-ACCTB.tok" --account $ACCTB --name "RESTOCKEVENTS-GRANT-ACK" --local-subject "\$JS.ACK.RESTOCKEVENTS.RESTOCKEVENTS-C1.>"
 nsc add import --token "RESTOCKEVENTS-GRANT-INFO-ACCTB.tok" --account $ACCTB --name "RESTOCKEVENTS-GRANT-INFO" --local-subject "ACCTC.API.CONSUMER.INFO.RESTOCKEVENTS.RESTOCKEVENTS-C1"

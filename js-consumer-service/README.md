@@ -3,7 +3,7 @@
 ```bash
 # as test-a
 ./js-bootstrap.sh
-4
+
 # with access to test-a and test-c account privatekey
 ./acct-export.sh -a
 
