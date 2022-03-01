@@ -14,9 +14,14 @@ ACCTCPUBKEY="ABTJUJC5DHOPQHI2WLUDUBTYDDNJKP45J7SWUDPP673TK3X7U5FUGU33"
 
 addexports () {
 # ACCTA
-nsc add export --account $ACCTA --name "ORDEREVENTS-GRANT-DELIVER" --subject "deliver.retail.v1.order.events"
-nsc add export --account $ACCTA --name "ORDEREVENTS-GRANT-ACK" --subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --service
-nsc add export --account $ACCTA --name "ORDEREVENTS-GRANT-INFO" --subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --service
+nsc add export --private --account $ACCTA --name "ORDEREVENTS-GRANT-DELIVER" --subject "deliver.retail.v1.order.events"
+nsc add export --private --account $ACCTA --name "ORDEREVENTS-GRANT-ACK" --subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --service
+nsc add export --private --account $ACCTA --name "ORDEREVENTS-GRANT-INFO" --subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --service
+
+# Generate an activation token for ACCTB import
+nsc generate activation --output-file "ORDEREVENTS-GRANT-DELIVER-ACCTB.tok" --account $ACCTA --subject "deliver.retail.v1.order.events" --target-account $ACCTBPUBKEY
+nsc generate activation --output-file "ORDEREVENTS-GRANT-ACK-ACCTB.tok" --account $ACCTA --subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --target-account $ACCTBPUBKEY
+nsc generate activation --output-file "ORDEREVENTS-GRANT-INFO-ACCTB.tok" --account $ACCTA --subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --target-account $ACCTBPUBKEY
 }
 
 deleteexports () {

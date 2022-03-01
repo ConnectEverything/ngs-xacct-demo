@@ -14,9 +14,9 @@ ACCTCPUBKEY="ABTJUJC5DHOPQHI2WLUDUBTYDDNJKP45J7SWUDPP673TK3X7U5FUGU33"
 
 addimports () {
 # ACCTB
-nsc add import --account $ACCTB --name "ORDEREVENTS-GRANT-DELIVER" --src-account $ACCTAPUBKEY --remote-subject "deliver.retail.v1.order.events" --local-subject "retail.v1.order.events"
-nsc add import --account $ACCTB --name "ORDEREVENTS-GRANT-ACK" --remote-subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --src-account $ACCTAPUBKEY --local-subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --service
-nsc add import --account $ACCTB --name "ORDEREVENTS-GRANT-INFO" --remote-subject "\$JS.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --src-account $ACCTAPUBKEY --local-subject "ACCTA.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --service
+nsc add import --token "ORDEREVENTS-GRANT-DELIVER-ACCTB.tok" --account $ACCTB --name "ORDEREVENTS-GRANT-DELIVER" --local-subject "retail.v1.order.events"
+nsc add import --token "ORDEREVENTS-GRANT-ACK-ACCTB.tok" --account $ACCTB --name "ORDEREVENTS-GRANT-ACK" --local-subject "\$JS.ACK.ORDEREVENTS.ORDEREVENTS-C1.>" --service
+nsc add import --token "ORDEREVENTS-GRANT-INFO-ACCTB.tok" --account $ACCTB --name "ORDEREVENTS-GRANT-INFO" --local-subject "ACCTA.API.CONSUMER.INFO.ORDEREVENTS.ORDEREVENTS-C1" --service
 }
 
 deleteimports () {
